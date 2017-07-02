@@ -1,45 +1,67 @@
 <!DOCTYPE html>
 <html>
+<body>
 <style>
 body {
-	  background-image: url('/w-background.jpg');
-    background-attachment: fixed;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 120em;
-    color: white;
+font-family: 'Avenir Next';
 }
-.body-overlay {
-    position: absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    background-color:  rgba(0,0,0,0.5);
-    z-index: -100;
+.fahrenheit {
+color: red;
+}
+.celsius {
+color: blue;
+}
+textarea {
+display: block;
+resize: none;
+}
+#warning {
+background-color: coral;
+padding: 0.5em;
+color: white;
+font-weight: bold;
+}
 </style>
-<body>
 
-<div class="body-overlay"></div>
+<h2>JavaScript Functions</h2>
 
-<h2>JavaScript Math</h2>
+<p>This example calls a function to convert from Fahrenheit to Celsius:</p>
 
-<p>Math.floor(Math.random() * 100) + 1) returns a random integer between 1 and 100 (both included).</p>
 
-<p id="random"</p>
-<p id="demo"></p>
+<textarea type="text" id="input"></textarea>
+<button onclick="doIt(document.getElementById('input').value)">Click meh!</button>
+<button onclick="doIt(randomNum(0,1000));document.getElementById('input').value = ''">Randomee!!!</button>
+
+<p id="warning" style="display: none;">&#9888; Hi!</p>
+
+
+<p><span class="fahrenheit" id="query">0&deg;F</span> = <span class="celsius" id="answer">0&deg;C</span></p>
+
 
 <script>
-var rand = Math.random();
-document.getElementById("random").innerHTML = rand;
-var x = 0;
-var y = 9999;
-var res = Math.floor(rand * y) + x;
-res = 125
-while(res.length < y.length) {
-	res = Number('0' + res);
+function randomNum(x,y) {
+	return(Math.floor(Math.random() * y) + x);
 }
-document.getElementById("demo").innerHTML = res.toString().length;
+function toCelsius(f) {
+    return (5/9) * (f-32);
+}
+function doIt(inputValue) {
+	if(Number(inputValue)*0 != 0 || inputValue == '' || inputValue == undefined) {
+    document.getElementById('warning').style.display = 'block';
+      document.getElementById('warning').innerHTML = '&#9888; Be Sensible!';
+    }
+    else {
+    document.getElementById('warning').style.display = 'none';
+      document.getElementById("query").innerHTML = Number(inputValue) + '&deg;F';
+      document.getElementById("answer").innerHTML = Math.round(toCelsius(Number(inputValue))) + '&deg;C';
+    }
+}
+</script>
+
+<script>
+
+
+//var fahrenheit = rand(0,1000);
 </script>
 
 </body>
