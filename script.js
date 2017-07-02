@@ -11,10 +11,11 @@ function guess() {
 }
 
 function codeGenerator() {
-	answer = randomNum(0,9999).toString();
-	while(answer.length < 4) {
-		answer = '0' + answer;
+	code = randomNum(0,9999).toString();
+	while(code.length < 4) {
+		code = '0' + code;
 	}
+	document.getElementById('answer').value = code;
 }
 	
 function randomNum(x,y) {
