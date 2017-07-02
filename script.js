@@ -1,9 +1,13 @@
 var code = 'x';
 
+function init() {
+	codeGenerator();
+}
+
 function guess() {
-	if(answer == 'x') {
+/*	if(answer == 'x') {
 		codeGenerator();
-	}
+	}*/
 }
 
 function codeGenerator() {
