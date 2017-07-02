@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+	  background-image: url('/w-background.jpg');
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 120em;
+    color: white;
+}
+.body-overlay {
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color:  rgba(0,0,0,0.5);
+    z-index: -100;
+</style>
+<body>
+
+<div class="body-overlay"></div>
+
+<h2>JavaScript Math</h2>
+
+<p>Math.floor(Math.random() * 100) + 1) returns a random integer between 1 and 100 (both included).</p>
+
+<p id="random"</p>
+<p id="demo"></p>
+
+<script>
+var rand = Math.random();
+document.getElementById("random").innerHTML = rand;
+var x = 0;
+var y = 9999;
+var res = Math.floor(rand * y) + x;
+res = 125
+while(res.length < y.length) {
+	res = Number('0' + res);
+}
+document.getElementById("demo").innerHTML = res.toString().length;
+</script>
+
+</body>
+</html>
