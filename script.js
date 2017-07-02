@@ -1,12 +1,12 @@
-var answer = 'x';
+var code = 'x';
 
 function guess() {
-	if(answer == x) {
-		generateAnswer();
+	if(answer == 'x') {
+		codeGenerator();
 	}
 }
 
-function generateAnswer() {
+function codeGenerator() {
 	answer = randomNum(0,9999).toString();
 	while(answer.length < 4) {
 		answer = '0' + answer;
